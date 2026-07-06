@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortal Kombat — Update Terbaru 2026</title>
+<link rel="canonical" href="https://planccgcom-crypto.github.io/update/mortal-kombat-update-2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Rajdhani:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #080808;
+    --charcoal:#141414;
+    --panel:   #1a1a1a;
+    --crimson: #C0001A;
+    --fire:    #E84A00;
+    --gold:    #C8961A;
+    --smoke:   #2e2e2e;
+    --white:   #F0EDE8;
+    --grey:    #888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--crimson);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.12em;
+    color: var(--crimson);
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--grey); text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    margin-top: 56px;
+    min-height: 90vh;
+    position: relative;
+    display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; background-position: center 30%;
+    filter: brightness(0.28) saturate(0.6);
+  }
+  /* Animated blood-drip gradient overlay */
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg,
+      rgba(8,8,8,0) 0%,
+      rgba(192,0,26,0.08) 40%,
+      rgba(8,8,8,0.7) 70%,
+      rgba(8,8,8,1) 100%);
+  }
+  /* Scanline texture */
+  .hero-scan {
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 3rem 4rem 4rem;
+    max-width: 900px;
+  }
+  .hero-eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--crimson); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 2px; background: var(--crimson);
+  }
+  .hero-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .hero-title .mk { color: var(--crimson); }
+  .hero-title .dragon {
+    display: inline-block;
+    position: relative;
+  }
+  /* Animated fire glow on subtitle */
+  @keyframes flicker {
+    0%, 100% { text-shadow: 0 0 20px var(--crimson), 0 0 60px rgba(192,0,26,0.4); }
+    50%       { text-shadow: 0 0 40px var(--fire),   0 0 100px rgba(232,74,0,0.3); }
+  }
+  .hero-sub {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    font-weight: 700; letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    animation: flicker 2.8s ease-in-out infinite;
+    margin-top: 0.3rem;
+  }
+  .hero-desc {
+    margin-top: 1.5rem;
+    max-width: 540px;
+    color: #aaa;
+    font-size: 1rem; line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-top: 2rem;
+    background: var(--crimson);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+    transition: background .2s;
+  }
+  .hero-cta:hover { background: #a0001a; }
+
+  /* ── DRAGON DIVIDER ── */
+  .divider {
+    display: flex; align-items: center; gap: 1.2rem;
+    padding: 2.4rem 4rem;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--smoke); }
+  .divider-symbol {
+    font-size: 1.4rem; color: var(--crimson);
+    font-family: 'Black Han Sans', sans-serif;
+    letter-spacing: 0.1em; white-space: nowrap;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--crimson);
+    display: flex;
+    overflow: hidden;
+  }
+  .stat-item {
+    flex: 1; padding: 1.2rem 1rem;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    display: block;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+  }
+  .stat-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── FEATURED SECTION ── */
+  .section { padding: 4rem 4rem; }
+  .section-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+  .section-subtitle {
+    color: var(--grey);
+    font-size: 0.9rem; margin-bottom: 2.4rem;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  /* ── MAIN FEATURE (Film MK2) ── */
+  .feature-main {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 0;
+    background: var(--panel);
+    overflow: hidden;
+    border-left: 3px solid var(--crimson);
+    margin-bottom: 2rem;
+  }
+  .feature-main-img {
+    width: 100%; height: 420px;
+    object-fit: cover; object-position: center;
+    display: block;
+    filter: brightness(0.85) saturate(0.7);
+    transition: filter .4s;
+  }
+  .feature-main:hover .feature-main-img { filter: brightness(0.95) saturate(0.9); }
+  .feature-main-body {
+    padding: 2.4rem 2.4rem;
+    display: flex; flex-direction: column; justify-content: center;
+    border-left: 1px solid var(--smoke);
+  }
+  .tag {
+    display: inline-block;
+    background: var(--crimson);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .tag.gold { background: var(--gold); }
+  .tag.fire { background: var(--fire); }
+  .feature-main-body h2 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    line-height: 1.1; margin-bottom: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+  .feature-main-body p { color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; }
+  .meta { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem;
+    color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── CAST ROW ── */
+  .cast-row {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .cast-pill {
+    background: var(--smoke);
+    border: 1px solid #333;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.22rem 0.7rem; color: var(--white);
+    clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .card {
+    background: var(--panel);
+    border-top: 2px solid var(--smoke);
+    overflow: hidden;
+    transition: border-color .25s, transform .25s;
+    cursor: pointer;
+  }
+  .card:hover { border-top-color: var(--crimson); transform: translateY(-3px); }
+  .card img {
+    width: 100%; height: 180px;
+    object-fit: cover; display: block;
+    filter: brightness(0.75) saturate(0.6);
+    transition: filter .3s;
+  }
+  .card:hover img { filter: brightness(0.9) saturate(0.85); }
+  .card-body { padding: 1.2rem 1.2rem 1.4rem; }
+  .card-body h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    letter-spacing: 0.04em; margin-bottom: 0.5rem;
+  }
+  .card-body p { font-size: 0.87rem; color: #999; line-height: 1.55; }
+  .card-footer {
+    padding: 0.5rem 1.2rem 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .read-more {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--crimson); text-decoration: none;
+  }
+
+  /* ── TIMELINE (patch notes) ── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: var(--smoke);
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2rem 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -1.55rem; top: 0.4rem;
+    width: 12px; height: 12px;
+    background: var(--crimson);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  .timeline-date {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.3rem;
+  }
+  .timeline-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .timeline-body { font-size: 0.88rem; color: #999; line-height: 1.6; }
+
+  /* ── FEATURED HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, #1a0005 0%, #1a1a1a 100%);
+    border: 1px solid var(--crimson);
+    border-left: 4px solid var(--crimson);
+    padding: 2rem 2.4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-box::after {
+    content: 'MK';
+    position: absolute; right: 1.5rem; bottom: -1.2rem;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 7rem; color: rgba(192,0,26,0.06);
+    letter-spacing: -0.02em; line-height: 1;
+    pointer-events: none;
+  }
+  .highlight-box h3 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.4rem; margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  .highlight-box p { color: #bbb; font-size: 0.95rem; line-height: 1.7; }
+
+  /* ── TWO-COL LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 1px solid var(--smoke);
+    padding: 2.4rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-brand {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--crimson); font-size: 1.1rem;
+    letter-spacing: 0.12em;
+  }
+  .footer-note { color: var(--grey); font-size: 0.8rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-content { padding: 2rem 2rem 3rem; }
+    .section { padding: 3rem 1.5rem; }
+    .feature-main { grid-template-columns: 1fr; }
+    .feature-main-img { height: 260px; }
+    .two-col { grid-template-columns: 1fr; }
+    .divider { padding: 1.6rem 1.5rem; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { min-width: 50%; }
+  }
+  @media (max-width: 560px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2.8rem; }
+    .nav-links { display: none; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Mortal Kombat HQ</span>
+  <ul class="nav-links">
+    <li><a href="#film">Film</a></li>
+    <li><a href="#game">Game</a></li>
+    <li><a href="#patchnotes">Patch Notes</a></li>
+    <li><a href="#roster">Roster</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Update Terbaru &nbsp;·&nbsp; Juli 2026</p>
+    <h1 class="hero-title"><span class="mk">Mortal</span><br>Kombat</h1>
+    <p class="hero-sub">Finish Them &mdash; 2026 Edition</p>
+    <p class="hero-desc">
+      Film MK2 sudah tayang di bioskop, Legacy Kollection terus diperbarui,
+      dan MK3 resmi di-greenlight. Semua info terpanas ada di sini.
+    </p>
+    <a href="#film" class="hero-cta">&#9654;&nbsp; Baca Update</a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">33+</span><span class="stat-label">Tahun Franchise</span></div>
+  <div class="stat-item"><span class="stat-num">$257M</span><span class="stat-label">Box Office Global</span></div>
+  <div class="stat-item"><span class="stat-num">MK3</span><span class="stat-label">Sudah Di-Greenlit</span></div>
+  <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Game di Legacy Kollection</span></div>
+</div>
+
+<!-- DIVIDER -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-symbol">⚔ Film Update ⚔</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- FILM SECTION -->
+<section class="section" id="film">
+  <p class="section-subtitle">&#9670; Layar Lebar 2026</p>
+  <h2 class="section-title">Mortal Kombat II &mdash; Kini di Bioskop</h2>
+
+  <div class="feature-main reveal">
+    <img class="feature-main-img"
+         src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?auto=format&fit=crop&w=900&q=80"
+         alt="Aksi pertarungan epik">
+    <div class="feature-main-body">
+      <span class="tag fire">Tayang 8 Mei 2026</span>
+      <h2>Mortal Kombat II: Babak Baru Dimulai</h2>
+      <p>
+        Setelah tertunda dari Oktober 2025, New Line Cinema memindahkan tanggal rilis
+        ke <strong>8 Mei 2026</strong> — slot blockbuster musim panas. Keputusan berani
+        yang terbayar lunas dengan antusiasme masif dari penonton global.
+        Sutradara Simon McQuoid kembali, bersama naskah Jeremy Slater yang dipuji
+        dalam sesi screening tertutup.
+      </p>
+      <div class="cast-row">
+        <span class="cast-pill">Karl Urban – Johnny Cage</span>
+        <span class="cast-pill">Jessica McNamee – Sonya Blade</span>
+        <span class="cast-pill">Ludi Lin – Liu Kang</span>
+        <span class="cast-pill">Adeline Rudolph – Kitana</span>
+        <span class="cast-pill">Joe Taslim – Bi-Han</span>
+        <span class="cast-pill">Hiroyuki Sanada – Scorpion</span>
+        <span class="cast-pill">Tati Gabrielle – Jade</span>
+      </div>
+      <p class="meta">Sutradara: Simon McQuoid &nbsp;|&nbsp; Naskah: Jeremy Slater</p>
+    </div>
+  </div>
+
+  <div class="two-col reveal">
+    <div class="highlight-box">
+      <span class="tag gold">Kabar Besar</span>
+      <h3>Mortal Kombat 3 Sudah Greenlit!</h3>
+      <p>
+        Di New York Comic-Con 2025, Warner Bros. dan New Line secara resmi
+        mengumumkan bahwa Mortal Kombat 3 telah mendapat lampu hijau produksi.
+        Jeremy Slater kembali ditunjuk sebagai penulis naskah.
+        Studio sangat percaya diri dengan franchise ini setelah melihat respons
+        positif dari screening MK2 dan trailer yang meraih 107 juta penayangan global.
+      </p>
+    </div>
+    <div class="highlight-box">
+      <span class="tag">Fakta Film</span>
+      <h3>Angka yang Bicara Sendiri</h3>
+      <p>
+        Tiga film Mortal Kombat dari New Line Cinema telah meraup total
+        <strong>$257,8 juta</strong> di seluruh dunia. Film pertama (2021) dibuat
+        dengan bujet $55 juta dan menghasilkan $84,4 juta WW. MK2 diyakini
+        memiliki bujet lebih besar dan target yang jauh lebih ambisius
+        di posisi blockbuster musim panas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GAME SECTION -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-symbol">⚔ Game Update ⚔</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="section" id="game">
+  <p class="section-subtitle">&#9670; Dunia Game</p>
+  <h2 class="section-title">Legacy Kollection — Update Berjalan</h2>
+
+  <div class="cards-grid">
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=80" alt="Gaming setup">
+      <div class="card-body">
+        <span class="tag">Online Arcade</span>
+        <h3>Mode Online Arcade Kini Live</h3>
+        <p>Public beta Online Arcade resmi tersedia di Steam. Buat lobby publik/private, undang teman via kode 5 karakter, dan atur filter koneksi berdasarkan kecepatan dan region.</p>
+      </div>
+      <div class="card-footer">
+        <span class="meta">Nov 2025</span>
+        <a href="#" class="read-more">Selengkapnya ›</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=600&q=80" alt="Multiplayer gaming">
+      <div class="card-body">
+        <span class="tag fire">Coming Soon</span>
+        <h3>Krossplay Lintas Platform</h3>
+        <p>Update berikutnya akan membawa fitur Krossplay — pemain di PlayStation, Xbox, Switch, dan PC bisa saling bertarung. Dijadwalkan rilis musim semi 2026.</p>
+      </div>
+      <div class="card-footer">
+        <span class="meta">Q1 2026</span>
+        <a href="#" class="read-more">Selengkapnya ›</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Retro gaming">
+      <div class="card-body">
+        <span class="tag gold">Krypt Update</span>
+        <h3>Konten The Krypt Diperluas</h3>
+        <p>Seksi Kombatants di The Krypt kini mencakup video attract screen MK1 klasik dan video ending semua karakter dari MK4. Nostalgia level maksimal.</p>
+      </div>
+      <div class="card-footer">
+        <span class="meta">2025–2026</span>
+        <a href="#" class="read-more">Selengkapnya ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATCH NOTES TIMELINE -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-symbol">⚔ Patch Notes ⚔</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="section" id="patchnotes">
+  <p class="section-subtitle">&#9670; Legacy Kollection</p>
+  <h2 class="section-title">Riwayat Update Resmi</h2>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <p class="timeline-date">2026 — Spring</p>
+      <p class="timeline-title">Krossplay Lintas Platform (Diumumkan)</p>
+      <p class="timeline-body">
+        Konfirmasi resmi: pemain di platform berbeda akan bisa bertarung satu sama lain.
+        PC (Steam), PlayStation 4/5, Xbox, Nintendo Switch, dan Switch 2 semuanya kompatibel.
+      </p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-date">2026 — Januari</p>
+      <p class="timeline-title">Fixed AI Difficulty Diperluas &amp; Bug Fixes Masif</p>
+      <p class="timeline-body">
+        Fitur Fixed AI Difficulty tersedia di lebih banyak judul. Training Mode lebih cepat diakses,
+        opsi max-out koin di versi GBA Deadly Alliance, serta perbaikan move list dan finishing moves
+        untuk berbagai judul dalam koleksi.
+      </p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-date">Nov 21, 2025</p>
+      <p class="timeline-title">Online Arcade Public Beta — Steam</p>
+      <p class="timeline-body">
+        Beta publik Online Arcade resmi live di Steam. Pemain bisa membuat lobby publik maupun
+        private dan menikmati semua game dalam Legacy Kollection bersama teman.
+      </p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-date">Nov 4, 2025</p>
+      <p class="timeline-title">Hotfix Pertama Pasca-Launch</p>
+      <p class="timeline-body">
+        Merespons feedback komunitas, tim merilis hotfix untuk masalah stabilitas dan integrasi Steam client.
+        Versi: Xbox 1.0.0.4, Switch 1.0.5, PS4 1.0.0.6, PS5 1.0.6.
+      </p>
+    </div>
+    <div class="timeline-item reveal">
+      <p class="timeline-date">Okt 30, 2025</p>
+      <p class="timeline-title">Mortal Kombat: Legacy Kollection Diluncurkan</p>
+      <p class="timeline-body">
+        Koleksi resmi game-game MK klasik dari era arcade hingga PS2 hadir di semua platform.
+        Mencakup lebih dari 10 judul ikonik dengan fitur online dan museum konten.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER SECTION -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-symbol">⚔ Roster Film ⚔</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="section" id="roster">
+  <p class="section-subtitle">&#9670; Mortal Kombat II — Cast Lengkap</p>
+  <h2 class="section-title">Para Pejuang Kembali Bertarung</h2>
+
+  <div class="cards-grid">
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Karakter">
+      <div class="card-body">
+        <span class="tag fire">Baru</span>
+        <h3>Karl Urban sebagai Johnny Cage</h3>
+        <p>Penambahan terbesar di MK2. Bintang The Boys ini membawa energi komedi sekaligus aksi brutal khas Johnny Cage yang jadi favorit para fan.</p>
+      </div>
+    </div>
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80" alt="Karakter">
+      <div class="card-body">
+        <span class="tag">Kembali</span>
+        <h3>Hiroyuki Sanada sebagai Scorpion</h3>
+        <p>Hanzo Hasashi kembali hadir. Sanada membawa kedalaman dramatis yang membuat karakter ikonik ini jauh lebih dari sekadar "Get over here!"</p>
+      </div>
+    </div>
+    <div class="card reveal">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Karakter">
+      <div class="card-body">
+        <span class="tag gold">Baru</span>
+        <h3>Adeline Rudolph sebagai Kitana</h3>
+        <p>Putri Outworld yang misterius akhirnya hadir di layar lebar. Adeline Rudolph membawa pesona dan keanggunan berbahaya khas Kitana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">&#9670; Mortal Kombat HQ</span>
+  <span class="footer-note">Data bersumber dari Deadline, GameSpot, ComicBook, Digital Eclipse &nbsp;&nbsp;|&nbsp;&nbsp; &copy; 2026 — Update Juli 2026</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
